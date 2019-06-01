@@ -68,6 +68,12 @@ pageClass: routes
 
 <Route author="lalxyy" example="/checkee/2019-03" path="/checkee/:month" :paramsDesc="['签证被 check 的年份-月份，如 2019-03']" />
 
+## cnBeta
+
+### 最新
+
+<Route author="kt286" example="/cnbeta" path="/cnbeta"/>
+
 ## DoNews
 
 ### 栏目
@@ -504,6 +510,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 <Route author="WenryXu" example="/juesheng" path="/juesheng"/>
 
+## 空气质量
+
+### 实时 AQI
+
+<Route author="xapool" example="/aqicn/beijing" path="/aqicn/:city" :paramsDesc="['城市拼音或地区 ID，详见[aqicn.org](http://aqicn.org/city/)']"/>
+
 ## 快递
 
 ### 快递
@@ -825,6 +837,12 @@ type 为 all 时，category 参数不支持 cost 和 free
 
 </Route>
 
+## 新浪专栏
+
+### 创事记
+
+<Route author="xapool" example="/sina/csj" path="/sina/csj"/>
+
 ## 异次元软件世界
 
 ### 首页
@@ -836,6 +854,11 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 新闻
 
 <Route author="LogicJake" example="/mpaypass/news" path="/mpaypass/news"/>
+
+### 分类
+
+<Route author="zhuan-zhu" example="/mpaypass/main/policy" path="mpaypass/main/:type?"
+:paramsDesc="['新闻类型,类型可在URL中找到，类似policy，eye等，空或其他任意值展示最新新闻']"/>
 
 ## 油价
 
@@ -884,9 +907,3 @@ type 为 all 时，category 参数不支持 cost 和 free
 ### 全文
 
 <Route author="HenryQW" example="/zzz" path="/zzz/index"/>
-
-##空气质量
-
-###实时 AQI
-
-<Route author="xapool" example="/aqicn/beijing" path="/aqicn/:city" :paramsDesc="['城市拼音，详见[aqicn.org](http://aqicn.org/city/)']"/>
