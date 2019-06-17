@@ -4,6 +4,12 @@ pageClass: routes
 
 # 编程
 
+## AI 研习社
+
+### 首页
+
+<Route author="kt286" example="/aiyanxishe/109/hot" path="/aiyanxishe/:id/:sort?" :paramsDesc="['领域 id，全部领域为 all，单独领域 id 抓包可得','排序方式，默认为 new（最新），也可选择 hot（最热）或 recommend（推荐）']"/>
+
 ## AlgoCasts
 
 ### 视频更新
@@ -152,7 +158,7 @@ GitHub 官方也提供了一些 RSS:
 
 ### 打卡
 
-<Route author="NathanDai" example="/leetcode/submission/us/nathandai" path="/leetcode/submission/us/:user" :paramsDesc="['现在只支持国际版的leetcode', '用户名 user, 可在LeetCode用户主页的 URL 中找到']"/>
+<Route author="NathanDai" example="/leetcode/submission/us/nathandai" path="/leetcode/submission/:country/:user" :paramsDesc="['国家 country, 中国(cn)和美国(us)', '用户名 user, 可在LeetCode用户主页的 URL 中找到']"/>
 
 ## LinkedKeeper
 
