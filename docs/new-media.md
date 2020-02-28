@@ -79,6 +79,16 @@ pageClass: routes
 
 <Route author="JamesWDGu" example="/engadget-cn" path="/engadget-cn"/>
 
+### 多語言
+
+<Route author="JamesWDGu KeiLongW" example="/engadget/chinese" path="/engadget/:lang" :paramsDesc="['語言']">
+
+| 繁體中文 | 簡體中文 | US  | 日文     |
+| -------- | -------- | --- | -------- |
+| chinese  | cn       | us  | japanese |
+
+</Route>
+
 ## iDownloadBlog
 
 ### blog
@@ -121,6 +131,16 @@ pageClass: routes
 
 <Route author="xyqfer" example="/itjuzi/merge" path="/itjuzi/merge"/>
 
+## Letterboxd
+
+### User diary
+
+<Route author="loganrockmore" example="/letterboxd/user/diary/demiadejuyigbe" path="/letterboxd/user/diary/:username" :paramsDesc="['username']" />
+
+### Following diary
+
+<Route author="loganrockmore" example="/letterboxd/user/followingdiary/demiadejuyigbe" path="/letterboxd/user/followingdiary/:username" :paramsDesc="['username']" />
+
 ## Matters
 
 ### 最新排序
@@ -151,6 +171,14 @@ pageClass: routes
 
 <Route author="Jeason0228" example="/pmcaff/list/2" path="/pmcaff/list/:typeid" :paramsDesc="['分类 id,1=今天推荐,2=精选']"/>
 
+### 社区
+
+<Route author="WenryXu" example="/pmcaff/feed/1" path="/pmcaff/feed/:typeid" :paramsDesc="['分类 id']"/>
+
+| 发现 | 待回答 | 最热 | 问答专场 | 投稿 | 深度 | 专栏 |
+| ---- | ------ | ---- | -------- | ---- | ---- | ---- |
+| 1    | 2      | 3    | 4        | 5    | 6    | 7    |
+
 ## Quanta Magazine
 
 ### 全部
@@ -179,7 +207,7 @@ pageClass: routes
 
 <Route author="emdoe" example="/simonsfoundation/recommend" path="/simonsfoundation/recommend"/>
 
-## sixthtone
+## Sixth Tone
 
 ### 最新文章
 
@@ -246,6 +274,12 @@ Supported sub-sites：
 ### 快讯
 
 <Route author="hillerliao" example="/8btc/news/flash" path="/8btc/news/flash"/>
+
+## 白鲸出海
+
+### 首页最新帖子
+
+<Route author="jeffcottLu" example="/baijing" path="/baijing"></Route>
 
 ## 坂道系列官网新闻
 
@@ -359,6 +393,22 @@ Supported sub-sites：
 
 <Route author="emdoe" example="/plainlaw/archives" path="/plainlaw/archives"/>
 
+## 凤凰网
+
+### 大风号
+
+<Route author="Jamch" example="/ifeng/feng/2583/doc" path="/ifeng/feng/:id/:type" :paramsDesc="['对应 id，可在 大风号作者页面 找到','类型，见下表']"/>
+
+| 文章 | 视频  |
+| ---- | ----- |
+| doc  | video |
+
+## 谷歌新闻
+
+### 新闻
+
+<Route author="zoenglinghou" example="/google/news/要闻/hl=zh-CN&gl=CN&ceid=CN:zh-Hans" path="/google/news/:category/:locale" :paramsDesc="['子分类标题', '地区语言设置，在地址栏 `?` 后，包含 `hl`，`gl`，以及 `ceid` 参数']"/>
+
 ## 观察者网-中国关怀 全球视野
 
 ### 观察者首页
@@ -403,9 +453,9 @@ Supported sub-sites：
 
 <Route author="WenhuWee emdoe SivaGao HenryQW" example="/qdaily/column/59" path="/qdaily/:type/:id" :paramsDesc="['类型，见下表', '对应 id，可在 URL 找到']" radar="1">
 
-| 标签 | 栏目   | 分类       |
-| ---- | ------ | ---------- |
-| tag  | column | researcach |
+| 标签 | 栏目   | 分类     |
+| ---- | ------ | -------- |
+| tag  | column | category |
 
 </Route>
 
@@ -543,12 +593,6 @@ Supported sub-sites：
 
 <Route author="xyqfer" example="/laosiji/hotshow/128" path="/laosiji/hotshow/:id" :paramsDesc="['节目 id']"/>
 
-## 洛谷
-
-### 日报
-
-<Route author="LogicJake" example="/luogu/daily" path="/luogu/daily/:id?" :paramsDesc="['年度日报所在帖子id，可在 URL 中找到，不填默认为2019年日报']"/>
-
 ## 镁客网 im2maker
 
 ### 镁客网频道
@@ -683,6 +727,10 @@ Supported sub-sites：
 
 <Route author="SunShinenny" example="/sspai/author/796518" path="/sspai/author/:id"  :paramsDesc="['作者 id，可在作者主页URL中找到']"/>
 
+### 作者动态
+
+<Route author="umm233" example="/sspai/activity/d0u947vr" path="/sspai/activity/:slug"  :paramsDesc="['作者 slug，可在作者主页URL中找到']"/>
+
 ### 专题
 
 <Route author="SunShinenny" example="/sspai/topics" path="/sspai/topics">
@@ -699,7 +747,7 @@ Supported sub-sites：
 
 <Route author="Jeason0228" example="/sspai/tag/apple" path="/sspai/tag/:keyword" :paramsDesc="['关键词']"/>
 
-## 世界卫生组织
+## 世界卫生组织 WHO
 
 ### 媒体中心
 
@@ -839,6 +887,10 @@ Supported sub-sites：
 ### 公众号（传送门来源）
 
 <Route author="HenryQW" example="/wechat/csm/huxiu_com" path="/wechat/csm/:id" :paramsDesc="['公众号 id, 打开公众号页, 在 URL 中找到 id']"/>
+
+### 公众号（CareerEngine 来源）
+
+<Route author="HenryQW" example="/wechat/ce/595a5b14d7164e53908f1606" path="/wechat/ce/:id" :paramsDesc="['公众号 id, 在 [CareerEngine](https://search.careerengine.us/) 搜索公众号，通过 URL 中找到对应的公众号 id']"/>
 
 ### 公众号（Telegram 频道来源）
 

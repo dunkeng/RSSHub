@@ -14,6 +14,32 @@ pageClass: routes
 
 <Route author="HenryQW" example="/dcard/funny/popular" path="/dcard/:section/:type?" :paramsDesc="['板塊名稱，URL 中獲得', '排序，popular 熱門；latest 最新，默認為 latest']" radar="1"/>
 
+## Discuz
+
+### 通用子版块-自动检测
+
+<Route author="junfengP" example="/discuz/http%3a%2f%2fwww.u-share.cn%2fforum.php%3fmod%3dforumdisplay%26fid%3d56" path="/discuz/:link" :paramsDesc="['子版块链接， 需要手动Url编码']"/>
+
+### 通用子版块-指定版本
+
+<Route author="junfengP" example="/discuz/x/https%3a%2f%2fwww.52pojie.cn%2fforum-16-1.html" path="/discuz/:ver/:link" :paramsDesc="['discuz版本类型，见下表','子版块链接， 需要手动Url编码']" >
+
+| Discuz X 系列 | Discuz 7.x 系列 |
+| ------------- | --------------- |
+| x             | 7               |
+
+</Route>
+
+### 通用子版块-支持 Cookie
+
+<Route author="junfengP" example="/discuz/x/00/https%3a%2f%2fbbs.zdfx.net%2fforum-2-1.html" path="/discuz/:ver/:cid/:link" :paramsDesc="['discuz版本类型，见下表', 'Cookie id，需自建并配置环境变量，详情见部署页面的配置模块','子版块链接， 需要手动Url编码']" >
+
+| Discuz X 系列 | Discuz 7.x 系列 |
+| ------------- | --------------- |
+| x             | 7               |
+
+</Route>
+
 ## MCBBS
 
 ### 版块
@@ -28,7 +54,7 @@ pageClass: routes
 
 ### 分区帖子
 
-<Route author="xyqfer" example="/nga/forum/489" path="/nga/forum/:fid"  :paramsDesc="['分区 id, 可在分区主页 URL 找到']" radar="1"/>
+<Route author="xyqfer" example="/nga/forum/489" path="/nga/forum/:fid/:recommend?"  :paramsDesc="['分区 id, 可在分区主页 URL 找到','是否只显示精华主题, 留空为否, 任意值为是']" radar="1"/>
 
 ### 帖子
 
@@ -53,6 +79,12 @@ pageClass: routes
 ### 帖子
 
 <Route author="kt286" example="/v2ex/post/584403" path="/v2ex/post/:postid" :paramsDesc="['帖子ID，在 URL 可以找到']"/>
+
+## 电鸭社区
+
+### 工作机会
+
+<Route author="sfyumi" example="/eleduck/jobs" path="/eleduck/jobs"/>
 
 ## 虎扑
 
@@ -165,6 +197,12 @@ pageClass: routes
 
 <Route author="u3u" example="/tieba/post/lz/5853240586" path="/tieba/post/lz/:id" :paramsDesc="['帖子 ID']"/>
 
+## 小米社区
+
+### 圈子
+
+<Route author="DIYgod" example="/mi/bbs/board/18066617" path="/mi/bbs/board/:boardId" :paramsDesc="['圈子 id，可在圈子 URL 找到']" radar="1"/>
+
 ## 一亩三分地
 
 ### 主题帖
@@ -177,7 +215,7 @@ pageClass: routes
 
 ### 录取结果
 
-<Route author="NavePnow" example="/1point3acres/offer/12/1/CMU" path="/1point3acres/offer/:year?/:major?/:school?" :paramsDesc="['录取年份  id ', '录取专业 id', '录取学校 id']">
+<Route author="NavePnow" example="/1point3acres/offer/12/null/CMU" path="/1point3acres/offer/:year?/:major?/:school?" :paramsDesc="['录取年份  id，空为null', '录取专业 id，空为null', '录取学校 id，空为null']">
 ::: warning 三个 id 获取方式
 
 1. 打开 https://offer.1point3acres.com
